@@ -4,7 +4,7 @@
 
 package org.example.creational.singleton;
 
-public class LazyDoubleLockSingleton {
+public final class LazyDoubleLockSingleton {
 
     //  Volatile to ensure that the changes made to this variable are visible to all the threads
     private static volatile LazyDoubleLockSingleton instance = null;

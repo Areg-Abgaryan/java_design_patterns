@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class InnerClassSingletonTest {
+public final class InnerClassSingletonTest {
 
     //  Initialize singleton instance holder with atomic reference
     private final AtomicReference<InnerClassSingleton> instanceHolder = new AtomicReference<>();

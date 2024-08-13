@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class LazyDoubleLockSingletonTest {
+public final class LazyDoubleLockSingletonTest {
 
     //  Initialize singleton instance holder with atomic reference
     private final AtomicReference<LazyDoubleLockSingleton> instanceHolder = new AtomicReference<>();
