@@ -4,6 +4,9 @@
 
 package org.example.creational.builder;
 
+import org.example.design_patterns.creational.builder.Resource;
+import org.example.design_patterns.creational.builder.ResourceImportance;
+import org.example.design_patterns.creational.builder.ResourceStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -17,16 +20,19 @@ import java.util.Set;
 import java.util.UUID;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class ResourceTest {
+final class ResourceTest {
 
     private static final long TEST_CREATION_DATE_MS = 1723551913018L;
     private static String name, resourceKind;
     private static long size;
 
 
+    /**
+     * Test to validate the Builder's mandatory fields.
+     */
     @Test
     @Order(1)
-    public void testResourceBuilderMandatoryFieldsValidity() {
+    void testBuilderMandatoryFieldsValidity() {
         Assertions.assertThrows(IllegalArgumentException.class,
                 () -> new Resource.ResourceBuilder(null, "Data", 1024));
 
@@ -46,9 +52,12 @@ public class ResourceTest {
                 () -> new Resource.ResourceBuilder("Test Name", "Data", -1024));
     }
 
+    /**
+     * Test the Builder's mandatory fields.
+     */
     @Test
     @Order(2)
-    public void testResourceBuilderMandatoryFields() {
+    void testBuilderMandatoryFields() {
         initialize("host1", "Host", 1024);
         final Resource resource = new Resource.ResourceBuilder(name, resourceKind, size).build();
 
@@ -57,20 +66,25 @@ public class ResourceTest {
         Assertions.assertEquals(size, resource.getSize());
     }
 
+    /**
+     * Test the Builder's default fields.
+     */
     @Test
     @Order(3)
-    public void testResourceBuilderDefaultValues() {
+    void testBuilderDefaultFields() {
         initialize("cluster1", "Cluster", 2048);
         final Resource resource = new Resource.ResourceBuilder(name, resourceKind, size).build();
 
-        // Assert
         Assertions.assertEquals(ResourceStatus.ACTIVE, resource.getStatus());
         Assertions.assertEquals(ResourceImportance.UNKNOWN, resource.getImportance());
     }
 
+    /**
+     * Test the Builder's optional fields.
+     */
     @Test
     @Order(4)
-    public void testResourceBuilderOptionalFields() {
+    void testBuilderOptionalFields() {
         initialize("datacenter1", "Datacenter", 3072);
 
         final String description = "Test description";
@@ -87,9 +101,12 @@ public class ResourceTest {
         Assertions.assertEquals(0, resource.getLastModifiedDate());
     }
 
+    /**
+     * Test the Builder's auto-assigned fields.
+     */
     @Test
     @Order(5)
-    public void testResourceBuilderAutoAssignedFields() {
+    void testBuilderAutoAssignedFields() {
         initialize("vm1", "VM", 4096);
         final Resource resource = new Resource.ResourceBuilder(name, resourceKind, size).build();
 
@@ -97,9 +114,12 @@ public class ResourceTest {
         Assertions.assertTrue(resource.getCreationDate() > TEST_CREATION_DATE_MS);
     }
 
+    /**
+     * Test the Builder's mutability.
+     */
     @Test
     @Order(6)
-    public void testBuilderMutability() {
+    void testMutability() {
         initialize("Test Resource", "Data", 1024);
         final var builder = new Resource.ResourceBuilder(name, resourceKind, size);
         builder.setDescription("Initial Description");
@@ -111,10 +131,12 @@ public class ResourceTest {
         Assertions.assertEquals(newDescription, resource.getDescription());
     }
 
+    /**
+     * Test the Builder's copy constructor.
+     */
     @Test
     @Order(7)
-    public void testBuilderCopySetsAndOtherFields() {
-
+    void testCopyConstructor() {
         final var builder = new Resource.ResourceBuilder("Test Resource", "Data", 5000)
                 .setStatus(ResourceStatus.INACTIVE)
                 .setImportance(ResourceImportance.CRITICAL)

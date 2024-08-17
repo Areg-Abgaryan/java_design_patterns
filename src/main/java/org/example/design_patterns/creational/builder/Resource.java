@@ -2,7 +2,7 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.creational.builder;
+package org.example.design_patterns.creational.builder;
 
 import lombok.Getter;
 import org.example.utils.Utils;

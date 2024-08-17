@@ -4,6 +4,7 @@
 
 package org.example.creational.singleton;
 
+import org.example.design_patterns.creational.singleton.InnerClassSingleton;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -14,7 +15,7 @@ import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public final class InnerClassSingletonTest {
+final class InnerClassSingletonTest {
 
     //  Initialize singleton instance holder with atomic reference
     private final AtomicReference<InnerClassSingleton> instanceHolder = new AtomicReference<>();
@@ -24,7 +25,7 @@ public final class InnerClassSingletonTest {
      */
     @Test
     @Order(1)
-    public void testSingleInstance() {
+    void testSingleInstance() {
         final var instance1 = InnerClassSingleton.getInstance();
         final var instance2 = InnerClassSingleton.getInstance();
         Assertions.assertSame(instance1, instance2, "Both instances should be the same.");
@@ -35,7 +36,7 @@ public final class InnerClassSingletonTest {
      */
     @Test
     @Order(2)
-    public void testThreadSafety() throws InterruptedException {
+    void testThreadSafety() throws InterruptedException {
         final int numberOfThreads = 100;
         final Thread[] threads = new Thread[numberOfThreads];
 
@@ -56,15 +57,15 @@ public final class InnerClassSingletonTest {
             });
         }
 
-        // Start all threads
+        //  Start all threads
         Arrays.stream(threads).forEach(Thread::start);
 
-        // Wait for all threads to finish
+        //  Wait for all threads to finish
         for (Thread thread : threads) {
             thread.join();
         }
 
-        // Verify that all threads got the same instance
+        //  Verify that all threads got the same instance
         final InnerClassSingleton firstInstance = instanceHolder.get();
         Assertions.assertNotNull(firstInstance, "Instance must not be null.");
         for (int i = 0; i < numberOfThreads; ++i) {
@@ -78,7 +79,7 @@ public final class InnerClassSingletonTest {
      */
     @Test
     @Order(3)
-    public void testCloneNotAllowed() {
+    void testCloneNotAllowed() {
         final var instance = InnerClassSingleton.getInstance();
         Assertions.assertThrows(CloneNotSupportedException.class, instance::clone, "Cloning must not be supported.");
     }

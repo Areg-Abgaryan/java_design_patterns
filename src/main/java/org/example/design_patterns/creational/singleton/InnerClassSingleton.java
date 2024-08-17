@@ -2,7 +2,7 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.creational.singleton;
+package org.example.design_patterns.creational.singleton;
 
 public final class InnerClassSingleton {
 
@@ -20,7 +20,7 @@ public final class InnerClassSingleton {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         throw new CloneNotSupportedException("Singleton instance cannot be cloned.");
     }
 }
