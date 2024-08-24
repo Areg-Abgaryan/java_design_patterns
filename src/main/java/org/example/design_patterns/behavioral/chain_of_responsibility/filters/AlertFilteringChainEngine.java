@@ -12,20 +12,20 @@ import java.util.Set;
  * Singleton class that manages the chain of filters for processing alerts.
  * The filters are applied in a predefined order to filter out alerts based on specific criteria.
  */
-public class AlertFilteringEngine {
+public class AlertFilteringChainEngine {
 
     private final FilterAlertBase alertFilterChain;
 
     private static class AlertEngineInstanceHolder {
         //  Create Alert Filtering Engine
-        private static final AlertFilteringEngine instance = new AlertFilteringEngine();
+        private static final AlertFilteringChainEngine instance = new AlertFilteringChainEngine();
     }
 
-    public static AlertFilteringEngine getInstance() {
+    public static AlertFilteringChainEngine getInstance() {
         return AlertEngineInstanceHolder.instance;
     }
 
-    private AlertFilteringEngine() {
+    private AlertFilteringChainEngine() {
         //  Initialize filters with predefined order for alert notifications
         final var categoryFilter = new FilterByCategory(null);
         final var criticalityFilter = new FilterByCriticality(categoryFilter);

@@ -5,5 +5,9 @@
 package org.example.design_patterns.creational.builder;
 
 public enum ResourceImportance {
-    UNKNOWN, LOW, MEDIUM, HIGH, CRITICAL
+    UNKNOWN,
+    LOW,
+    MEDIUM,
+    HIGH,
+    CRITICAL
 }

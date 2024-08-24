@@ -2,16 +2,11 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.creational.builder;
+package org.example.design_patterns.creational.builder;
 
-import org.example.design_patterns.creational.builder.Resource;
-import org.example.design_patterns.creational.builder.ResourceImportance;
-import org.example.design_patterns.creational.builder.ResourceStatus;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,7 +14,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 final class ResourceTest {
 
     private static final long TEST_CREATION_DATE_MS = 1723551913018L;

@@ -5,5 +5,7 @@
 package org.example.design_patterns.creational.builder;
 
 public enum ResourceStatus {
-    ACTIVE, INACTIVE, DELETED
+    ACTIVE,
+    INACTIVE,
+    DELETED
 }

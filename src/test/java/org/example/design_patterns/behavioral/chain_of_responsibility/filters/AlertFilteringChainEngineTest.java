@@ -2,13 +2,12 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.behavioral.chain_of_responsibility.filters;
+package org.example.design_patterns.behavioral.chain_of_responsibility.filters;
 
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Alert;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCategory;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCriticality;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertStatus;
-import org.example.design_patterns.behavioral.chain_of_responsibility.filters.AlertFilteringEngine;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -16,28 +15,28 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-final class AlertFilteringEngineTest {
+final class AlertFilteringChainEngineTest {
 
     /**
-     * Test to ensure only one instance is created for the AlertFilteringEngine class.
+     * Test to ensure only one instance is created for the AlertFilteringChainEngine class.
      */
     @Test
     @Order(1)
     void testEngineSingletonBehavior() {
-        final AlertFilteringEngine instance1 = AlertFilteringEngine.getInstance();
-        final AlertFilteringEngine instance2 = AlertFilteringEngine.getInstance();
+        final AlertFilteringChainEngine instance1 = AlertFilteringChainEngine.getInstance();
+        final AlertFilteringChainEngine instance2 = AlertFilteringChainEngine.getInstance();
 
         //  Assert that both instances are the same
-        Assertions.assertSame(instance1, instance2, "AlertFilteringEngine should be a singleton");
+        Assertions.assertSame(instance1, instance2, "AlertFilteringChainEngine should be a singleton");
     }
 
     /**
-     * Test AlertFilteringEngine with valid data.
+     * Test AlertFilteringChainEngine with valid data.
      */
     @Test
     @Order(2)
     void testProcessWithAllFilters() {
-        final AlertFilteringEngine engine = AlertFilteringEngine.getInstance();
+        final AlertFilteringChainEngine engine = AlertFilteringChainEngine.getInstance();
 
         //  Create alerts with different statuses, criticalities and categories
         final Set<Alert> alerts = new HashSet<>();

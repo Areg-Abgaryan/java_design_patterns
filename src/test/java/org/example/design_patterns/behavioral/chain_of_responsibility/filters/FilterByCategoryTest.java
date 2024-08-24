@@ -2,14 +2,13 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.behavioral.chain_of_responsibility.filters;
+package org.example.design_patterns.behavioral.chain_of_responsibility.filters;
 
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Alert;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCategory;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCriticality;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertFilteringException;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertStatus;
-import org.example.design_patterns.behavioral.chain_of_responsibility.filters.FilterByCategory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

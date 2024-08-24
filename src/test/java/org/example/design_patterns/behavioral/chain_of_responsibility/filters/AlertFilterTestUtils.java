@@ -2,7 +2,7 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.behavioral.chain_of_responsibility.filters;
+package org.example.design_patterns.behavioral.chain_of_responsibility.filters;
 
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Alert;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCategory;

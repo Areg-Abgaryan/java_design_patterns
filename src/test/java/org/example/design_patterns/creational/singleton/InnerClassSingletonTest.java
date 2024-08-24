@@ -2,19 +2,15 @@
  * Copyright (c) 2024 Areg Abgaryan
  */
 
-package org.example.creational.singleton;
+package org.example.design_patterns.creational.singleton;
 
-import org.example.design_patterns.creational.singleton.InnerClassSingleton;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 final class InnerClassSingletonTest {
 
     //  Initialize singleton instance holder with atomic reference

@@ -12,11 +12,11 @@ public final class InnerClassSingleton {
     //  Responsible for holding the Singleton instance
     //  Thread-safe due to JVM class loading mechanism
     private static class InstanceHolder {
-        private static final InnerClassSingleton INSTANCE = new InnerClassSingleton();
+        private static final InnerClassSingleton instance = new InnerClassSingleton();
     }
 
     public static InnerClassSingleton getInstance() {
-        return InstanceHolder.INSTANCE;
+        return InstanceHolder.instance;
     }
 
     @Override

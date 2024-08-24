@@ -8,7 +8,7 @@ import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Aler
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCategory;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCriticality;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertStatus;
-import org.example.design_patterns.behavioral.chain_of_responsibility.filters.AlertFilteringEngine;
+import org.example.design_patterns.behavioral.chain_of_responsibility.filters.AlertFilteringChainEngine;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ public class DemoBehavioralDPs {
     private static void demoChainOfResponsibility() {
 
         //  Chain of Responsibility
-        final AlertFilteringEngine engine = AlertFilteringEngine.getInstance();
+        final AlertFilteringChainEngine engine = AlertFilteringChainEngine.getInstance();
         final Set<Alert> alerts = new HashSet<>();
         alerts.add(new Alert("Alert 1", "Auto alert", AlertStatus.NEW, AlertCriticality.AUTO, AlertCategory.APPLICATION));
         alerts.add(new Alert("Alert 2", "None alert", AlertStatus.IN_PROGRESS, AlertCriticality.NONE, AlertCategory.DATABASE));
