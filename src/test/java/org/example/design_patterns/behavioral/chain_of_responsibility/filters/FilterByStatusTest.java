@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-final class FilterByStatusTest {
+class FilterByStatusTest {
 
     /**
      * Test FilterByStatus with nullable alerts' set.

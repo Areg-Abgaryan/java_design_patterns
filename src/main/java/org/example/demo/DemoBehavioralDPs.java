@@ -9,6 +9,7 @@ import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Aler
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertCriticality;
 import org.example.design_patterns.behavioral.chain_of_responsibility.alert.AlertStatus;
 import org.example.design_patterns.behavioral.chain_of_responsibility.filters.AlertFilteringChainEngine;
+import org.example.design_patterns.behavioral.memento.TextCaretaker;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,7 +18,9 @@ public class DemoBehavioralDPs {
 
     public static void demo() {
         demoChainOfResponsibility();
+        demoMemento();
     }
+
 
     private static void demoChainOfResponsibility() {
 
@@ -32,5 +35,26 @@ public class DemoBehavioralDPs {
         alerts.add(new Alert("Alert 6", "Critical alert", AlertStatus.NEW, AlertCriticality.CRITICAL, AlertCategory.SECURITY));
 
         final Set<Alert> filteredAlerts = engine.process(alerts);
+        System.out.println(filteredAlerts.size());
+    }
+
+    private static void demoMemento() {
+
+        //  Memento
+        final var textCaretaker = new TextCaretaker();
+        textCaretaker.write("1st text");
+        textCaretaker.write("2nd text");
+
+        System.out.println("Original State: " + textCaretaker.getText());
+
+        System.out.println("After Undo: " + textCaretaker.undo());
+        System.out.println("After Undo: " + textCaretaker.undo());
+
+        System.out.println("After Redo: " + textCaretaker.redo());
+        System.out.println("After Redo: " + textCaretaker.redo());
+        System.out.println("After Redo: " + textCaretaker.redo());
+
+        System.out.println("After Undo: " + textCaretaker.undo());
+        System.out.println("After Redo: " + textCaretaker.redo());
     }
 }

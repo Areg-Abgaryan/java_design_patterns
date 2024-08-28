@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-final class FilterByCategoryTest {
+class FilterByCategoryTest {
 
     /**
      * Test FilterByCategory with nullable alerts' set.

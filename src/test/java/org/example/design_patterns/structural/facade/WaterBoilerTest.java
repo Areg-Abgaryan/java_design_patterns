@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-final class WaterBoilerTest {
+class WaterBoilerTest {
 
     private static WaterBoiler waterBoiler;
 

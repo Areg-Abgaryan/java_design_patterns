@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-final class CoffeeGrinderTest {
+class CoffeeGrinderTest {
 
     private static CoffeeGrinder coffeeGrinder;
 

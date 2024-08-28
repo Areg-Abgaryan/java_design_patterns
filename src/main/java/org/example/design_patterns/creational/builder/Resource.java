@@ -13,7 +13,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Getter
-public final class Resource {
+public class Resource {
 
     //  Mandatory fields
     private final String name;
@@ -51,7 +51,7 @@ public final class Resource {
 
     //  Builder class
     @Getter
-    public static final class ResourceBuilder {
+    public static class ResourceBuilder {
 
         private final String name;
         private final String resourceKind;

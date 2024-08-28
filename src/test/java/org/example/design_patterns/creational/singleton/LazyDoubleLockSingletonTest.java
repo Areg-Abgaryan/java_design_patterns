@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-final class LazyDoubleLockSingletonTest {
+class LazyDoubleLockSingletonTest {
 
     //  Initialize singleton instance holder with atomic reference
     private final AtomicReference<LazyDoubleLockSingleton> instanceHolder = new AtomicReference<>();

@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-final class AlertFilteringChainEngineTest {
+class AlertFilteringChainEngineTest {
 
     /**
      * Test to ensure only one instance is created for the AlertFilteringChainEngine class.

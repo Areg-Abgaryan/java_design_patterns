@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-final class ResourceTest {
+class ResourceTest {
 
     private static final long TEST_CREATION_DATE_MS = 1723551913018L;
     private static String name, resourceKind;

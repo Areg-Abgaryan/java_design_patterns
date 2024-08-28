@@ -11,7 +11,8 @@ import org.example.design_patterns.behavioral.chain_of_responsibility.alert.Aler
 
 import java.util.function.Predicate;
 
-final class AlertFilterTestUtils {
+class AlertFilterTestUtils {
+
     static Predicate<Alert> getAllFilteringConditions() {
         return getFilteringByStatusCondition()
                 .and(getFilteringByCriticalityCondition())

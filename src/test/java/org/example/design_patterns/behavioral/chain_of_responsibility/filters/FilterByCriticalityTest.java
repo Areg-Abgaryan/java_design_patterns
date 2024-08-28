@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-final class FilterByCriticalityTest {
+class FilterByCriticalityTest {
 
     /**
      * Test FilterByCriticality with nullable alerts' set.
